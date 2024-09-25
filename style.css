@@ -1,0 +1,256 @@
+ul, ul a{
+    color: chocolate;
+    text-decoration: none; 
+}
+nav a,footer a{
+    text-decoration: none; color: black; margin-right: 0.6vw;
+}
+/* nav a:hover{
+    background-color: orange;
+} */
+footer a:hover{
+    color: rgb(0, 60, 255);
+}
+h1{
+    background-color: rgba(137, 43, 226, 0.37); padding: 30px;
+    font-family: 'lobster',cursive;
+    text-shadow: 1px 2px 1px black;
+}
+table,tr,th,td{
+    border: 1.5pt solid black;
+    padding: 8px;
+    border-collapse: collapse;
+}
+th{
+    background-color: darksalmon;
+}
+body{
+    border: 2pt solid black;
+    border-radius: 7pt;
+    background-color: rgb(255, 236, 212);
+    margin: 15px 15px;
+    background-image: linear-gradient(to right,yellow,orange,yellow);
+}
+.clip{
+    height: 60vh;
+}
+.me{
+    margin-left: 2%;
+    display: flex;
+    /* align-items: center; */
+}
+.progress{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 10px;
+    height: 198px;
+    background-color: transparent;
+    flex-wrap: wrap;
+}
+
+/* .progress-item{
+    
+} */
+
+.circle{  
+    color: aliceblue;  
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid;
+    border-color: blue;
+    display: flex;
+    font-size: large;
+    font-weight: 700;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(var(--progress-color) var(--progress-degree, 0%), rgb(37, 31, 44) 0%);
+    /* transition: background 1s ease; //Smooth transition for background */
+}
+
+#easy-progress {
+    --progress-color: green;
+}
+
+#medium-progress {
+    --progress-color: orange;
+}
+
+#hard-progress {
+    --progress-color: red;
+}
+
+#total-progress {
+    --progress-color: purple;
+}
+
+/* Keyframe to animate progress bar from 0% to final value */
+@keyframes progressAnimation {
+    from {
+        --progress-degree: 0%;
+    }
+    to {
+        /* Final value is set dynamically in JavaScript */
+    }
+}
+.circle span{
+    position: relative;
+    /* z-index: 2; */
+}
+@media  screen and (max-width:700) {
+    p{ color: red;}
+}
+@media (orientation:landscape){
+    p{color: blue;}
+}
+iframe{
+    float: left;
+    margin: 20px;
+    border: 10px double brown;
+    border-radius: 15px;
+    transition: all 500ms;
+}
+p{
+    margin: 15px; }
+footer{
+    background: linear-gradient(to right,coral,orange); padding: 20px;
+    border-radius: 10px;
+}
+  .carousel-cell {
+    max-width: 160%; padding-right: 15px; max-height: 800px;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  .carousel-cell img{
+      width: 860pt;
+      border-radius: 10px;
+  }
+  .profileContainer{
+    padding-left: 3vw;
+  }
+  footer svg{
+    width:1em;
+  }
+  /* Go to top button */
+  #myBtn { 
+      display: none;
+      position: fixed;
+      /* Fixed/sticky position */
+      bottom: 30px;
+      /* Place the button at the bottom of the page */
+      right: 30px;
+      /* Place the button 30px from the right */
+      z-index: 99;
+      /* Make sure it does not overlap */
+      border: none;
+      /* Remove borders */
+      outline: none;
+      /* Remove outline */
+      background-color: orange;
+      color: white;
+      cursor: pointer;
+      padding: 2px 15px;
+      border-radius: 50%;
+      font-weight: 880;
+      font-size: 30px;
+      box-shadow: 0 5px 11px black;
+      transform: rotate(270deg);
+  }
+  .colorMode{
+    margin-left: 49vw; border-radius: 15%; font-size: larger;
+  }
+  #myBtn:hover {
+      color: rgb(255, 106, 0);
+  }
+  .contentImg{
+    width: 40vw; padding: 5px 25px; border-radius: 25px;
+  }
+  h2{
+    padding-left: 20px;
+  }
+  nav ul {
+      float: right;
+      margin-right: 30px;
+  }
+  nav ul li {
+      display: inline-block;
+  }
+  nav ul li a {
+      color: white;
+      display: block;
+      padding: 0 15px;
+      line-height: 49px;
+      font-size: 20px;
+      background: #063247;
+      border-radius: 3px;
+      transition: .5s;
+  }
+  nav ul li a:hover,
+  nav ul li a.active {
+      color: #238bdb;
+  }
+  nav ul ul {
+      position: absolute;
+      top: 85px;
+      border-top: 3px solid #238bdb;
+      opacity: 0;
+      visibility: hidden;
+  }
+  nav ul li:hover>ul {
+      top: 70px;
+      opacity: 1;
+      visibility: visible;
+      transition: .3s linear;
+  }
+  nav ul ul li {
+      width: 150px;
+      display: list-item;
+      position: initial;
+      /* border: 1px solid #042331; */
+      border-top: none;
+      border-radius: 0;
+  }
+  nav ul ul li a {
+      line-height: 50px;
+  }
+  .long{
+    line-height: 30px; padding: 10px;
+  }
+  nav ul ul ul {
+      border-top: none;
+  }
+  nav ul ul ul li {
+      position: relative;
+      top: -70px;
+      left: 150px;
+  }
+  nav ul ul li a i {
+      margin-left: 45px;
+  }
+   ul{
+    list-style: none;
+    margin-bottom: 0;
+  }
+  /* Responsiveness */
+  @media (max-width:1400px){
+    .colorMode {
+            margin-left: 19vw;
+        }
+  }
+   @media (max-width:900px) {
+       .colorMode {
+           margin-left: 5vw;
+       }
+   }
+  /* .drpDwnItems{
+    padding: 5px;
+    display: none;
+  }
+  .drpDwn:hover > .drpDwnItems{
+    display: block;
+  } */
+  /* nav ul li ul li a:hover{
+    cursor: pointer;
+  } */
