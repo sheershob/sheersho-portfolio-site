@@ -106,7 +106,7 @@ fetchStats().then(data => console.log(data));
 function updateProgress(solved, total, label, circle){
     const progressDegree = (solved/total)*100;
     circle.style.setProperty("--progress-degree", `${progressDegree}%`);
-    // circle.style.animation = 'progressAnimation 1s ease forwards';
+    circle.style.animation = 'progressAnimation 1s ease forwards';
     label.textContent = `${solved} / ${total} `;
     // label.innerHTML = `${label.textContent}<br>${solved} / ${total}`;
 }
@@ -136,7 +136,43 @@ function displayData(parsedData){
     hardProgressCircle); 
 }
     })
+
+    async function getUserRatings(username) {
+        const url = `https://api.chess.com/pub/player/${username}/stats`;
+        
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            console.log(data);
+            displayRatings(data);
+        } catch (error) {
+            console.error('Error fetching the ratings:', error);
+        }
+    }
     
-    // document.getElementsByTagName('h1')[0].style.backgroundColor="black"
-    // const na = document.getElementById('navBar')
-    //         na.style.backgroundColor="black"; 
+    function displayRatings(data) {
+        // Extract ratings and peak ratings for each category
+        const rapidRating = data.chess_rapid ? data.chess_rapid.last.rating : 'N/A';
+        const rapidPeak = data.chess_rapid ? data.chess_rapid.best.rating : 'N/A';
+    
+        const blitzRating = data.chess_blitz ? data.chess_blitz.last.rating : 'N/A';
+        const blitzPeak = data.chess_blitz ? data.chess_blitz.best.rating : 'N/A';
+    
+        const bulletRating = data.chess_bullet ? data.chess_bullet.last.rating : 'N/A';
+        const bulletPeak = data.chess_bullet ? data.chess_bullet.best.rating : 'N/A';
+    
+        const dailyRating = data.chess_daily ? data.chess_daily.last.rating : 'N/A';
+        const dailyPeak = data.chess_daily ? data.chess_daily.best.rating : 'N/A';
+    
+        // Update the HTML content for each format
+        document.getElementById("rapid").innerHTML += `<h3>${rapidRating}</h3><h4>Peak: ${rapidPeak}</h4>`;
+        document.getElementById("blitz").innerHTML += `<h3>${blitzRating}</h3><h4>Peak: ${blitzPeak}</h4>`;
+        document.getElementById("bullet").innerHTML += `<h3>${bulletRating}</h3><h4>Peak: ${bulletPeak}</h4>`;
+        document.getElementById("daily").innerHTML += `<h3>${dailyRating}</h3><h4>Peak: ${dailyPeak}</h4>`;
+    }
+    
+    // Call the function with the Chess.com username
+    getUserRatings('sheershobanerjee'); 
