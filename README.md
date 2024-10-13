@@ -6,3 +6,6 @@ https://cors-anywhere.herokuapp.com/corsdemo  _link to the demo server_
 
 Similarly, I have fetched chess.com’s user APIs to
 display my current ratings in rapid, blitz, bullet, and daily time formats.
+
+
+![Sheersho-10-13-2024_11_26_AM](https://github.com/user-attachments/assets/4d555080-bb89-4773-9b7a-1c4bf2cecd09)
